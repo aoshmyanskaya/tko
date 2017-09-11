@@ -40,6 +40,10 @@ import { translationMessages } from './i18n';
 
 // Import CSS reset and Global Styles
 import './global-styles';
+import './public/css/bootstrap.css';
+import './public/css/materialadmin.css';
+import './public/css/font-awesome.min.css';
+import './public/css/App.css';
 
 // Import root routes
 import createRoutes from './routes';

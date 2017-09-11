@@ -11,19 +11,42 @@
  * the linting exception.
  */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { Grid } from 'react-bootstrap';
 
-export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+import HeaderBar from 'components/HeaderBar';
+import NavigationBar from 'components/NavigationBar';
 
-  static propTypes = {
-    children: React.PropTypes.node,
-  };
+class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+
+  constructor(props) {
+    super(props);
+    this.state = { expanded: true };
+    this.drawerToggle = this.drawerToggle.bind(this);
+  }
+
+  drawerToggle() {
+    this.setState(prevState => ({
+      expanded: !prevState.expanded
+    }));
+  }
 
   render() {
     return (
       <div>
-        {React.Children.toArray(this.props.children)}
+        <Grid fluid={true}>
+          <HeaderBar drawerToggle={this.drawerToggle}/>
+          <NavigationBar expanded={this.state.expanded}/>
+          {/*<StyleGuide expanded={this.state.expanded}/>*/}
+          {React.Children.toArray(this.props.children)}
+        </Grid>
       </div>
     );
   }
 }
+
+App.propTypes = {
+  children: React.PropTypes.node,
+};
+
+export default App;

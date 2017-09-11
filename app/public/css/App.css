@@ -1,0 +1,305 @@
+body {
+  background-color: #e5e6e6;
+}
+
+.headerLogo {
+    height: 4em;
+    padding: .5em;
+}
+
+/*Menubar CSS*/
+.menubar {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 64px;
+  bottom: 0;
+  width: 0px;
+  /*Collapsed 64px*/
+  color: rgba(12, 12, 12, 0.85);
+}
+
+.menubar-expanded {
+    width: 240px;
+    animation-name: drawerSlideOpen;
+    animation-duration: 0.5s;
+}
+
+@keyframes drawerSlideOpen {
+    0%   {width: 0px;}
+    100% {width: 240px;}
+}
+
+.menubar:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: #f2f2f3;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+}
+
+.menubar-inverse {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.menubar-inverse:before {
+    background: #2b323a;
+}
+
+.btn-folder {
+  text-transform: none;
+  height: 5em;
+  line-height: 3em;
+}
+
+.btn-folderIcon {
+  color: #969a9c;
+  padding: 14px;
+  margin-right: 10px;
+}
+
+.btn-folderIcon-active {
+  color: #0066A4;
+  background-color: white;
+  border-radius: 50%;
+  padding: 14px;
+  margin-right: 10px;
+}
+
+.btn-navItem {
+  text-transform: none;
+  margin-bottom: -5px;
+  height: 32px;
+}
+
+.menuItemLeftDashFirst {
+  content: "";
+  left: 27px;
+  top: -15px;
+  bottom: 0px;
+  position: absolute;
+  display: block;
+  width: 1px;
+  border-left: 1px dashed #969a9c;
+  z-index: 1;
+}
+
+.menuItemLeftDashMid {
+  content: "";
+  left: 27px;
+  top: 0px;
+  bottom: 0px;
+  position: absolute;
+  display: block;
+  width: 1px;
+  border-left: 1px dashed #969a9c;
+  z-index: 1;
+}
+
+.menuItemLeftDashLast {
+  content: "";
+  left: 27px;
+  top: 0px;
+  bottom: 14px;
+  position: absolute;
+  display: block;
+  width: 1px;
+  border-left: 1px dashed #969a9c;
+  z-index: 1;
+}
+
+.menuItemDash {
+  position: absolute;
+  left: 27px;
+  min-width: 25px;
+  min-height: 12px;
+  border-bottom: 1px dashed #969a9c;
+}
+
+.menuItemPadding {
+  margin-left: 60px;
+}
+
+.folderClosed {
+  display:none;
+  animation-name: folderCloseAnimate;
+  animation-duration: 0.5s;
+}
+
+.folderOpened {
+  display: block;
+  animation-name: folderOpenAnimate;
+  animation-duration: 0.5s;
+}
+
+@keyframes folderOpenAnimate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes folderCloseAnimate {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+li {
+    list-style: none;
+}
+
+.card-head {
+  background-color: white;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.dirtyForm ~ label {
+  top: 0px;
+  font-size: 12px !important;
+}
+
+@media (min-width: 720px) {
+  .contentOffset {
+      margin-left: 240px;
+  }
+}
+
+.headerPadding {
+  position: relative;
+  padding-top: 100px;
+}
+
+.section-header {
+height: 64px;
+padding: 14px 0;
+}
+
+li {
+  list-style: none;
+}
+
+h3 {
+  margin: 0;
+}
+
+.listItemNoBorder {
+  border-top: none;
+}
+
+.listItemWithIcon {
+  padding-left: .75em;
+}
+
+.faLeftPad {
+  padding-left: .5em;
+}
+
+.avatarImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+}
+
+.panelButtonRight {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.panelButtonRightTwo {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 45px;
+  bottom: 0;
+}
+
+.panelButtonLeft {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin-left: .5em;
+}
+
+.panelLeftText {
+  position: absolute;
+  top: 0;
+  left: 65px;
+}
+
+.tileSmall {
+  display: block;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.tileLeftButton {
+  min-height: 75px;
+}
+
+.rightAvatar {
+  float: right;
+}
+
+.tabContent {
+  padding: 1em;
+  text-align: left;
+}
+
+.tabTopPading {
+  padding-top: 2em;
+}
+
+.tabHeader {
+  font-weight: bold;
+  padding-left: 1.5em;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.centerTabs {
+  display: inline-block;
+  text-align: center;
+}
+
+.overflow {
+  height: 500px;
+}
+
+.tabHeaderNoTitle {
+  border-bottom: 1px solid #dddddd;
+  margin-top: -9px;
+}
+
+.tabRemoveWhitespace {
+  margin-top: -15px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.leftTabCard {
+  margin-left: -30px;
+  margin-top: -15px;
+}
+
+.rightTabCard {
+  margin-right: -30px;
+  margin-top: -15px;
+}
